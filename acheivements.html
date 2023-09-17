@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>lab8</title>
+  <style>
+    .dark-mode {
+      background-color: black;
+      color: rgb(0, 0, 0);
+    }
+
+    .mystyle {
+      color: greenyellow;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f1f1f1;
+      padding: 20px;
+      font-family: Arial;
+      margin-right:0;
+    }
+
+    .top {
+      background-color: #e6ff78;
+      padding: 20px;
+      font-family: Arial;
+    }
+
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 8px -16px;
+    }
+
+    .row,
+    .row>.column {
+      padding: 8px;
+    }
+
+    .column {
+      float: left;
+      width: 32%;
+      
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .content {
+      background-color: rgb(235, 243, 201);
+      padding: 10px;
+      
+    }
+
+    @media screen and (max-width: 900px) {
+      .column {
+        width: 50%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+    }
+
+    .pagination a.active {
+      background-color: rgb(89, 167, 255);
+      color: rgb(233, 233, 234);
+    }
+
+    .footer {
+      background-color: #e6ff78;
+      margin-left: 40%;
+    }
+
+    .pagination a:hover:not(.active) {
+      background-color: #caf9ff;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 160px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #2d27a3;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #fafdff;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #046190;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .sidenav a.active {
+      color: rgb(0, 0, 0);
+      background-color: #f9fdff;
+    }
+
+    .main {
+      margin-left: 160px;
+      /* Same as the width of the sidenav */
+      font-size: 20px;
+      /* Increased text to enable scrolling */
+      padding: 0px 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidenav">
+    <a href="home.html">Home</a>
+    <a href="photogallery.html">Photo Gallery</a>
+    <a class="active" href="acheivements.html">Acheivements</a>
+    <a href="academics.html">Academics</a>
+    <a href="form.html">Form & Feedback</a>
+    <a href="location.html">Location</a>
+    <a href="ideas.html">Ideas</a>
+    <a onclick="ChangeMode()">Dark mode</a>
+  </div>
+  <div class="main">
+    <div class="top">
+      <h1>Achievements:</h1>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="content">
+          <img src="C:\Users\Hrutu Bhatt\Pictures\Screenshots\Screenshot (11).png" alt="" style="width:100%">
+          <h3>Participations</h3>
+          <p>I have participated in a few Codechef contests. </p>
+          <h3>Badges</h3>
+          <p>I have received one bronze batch.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <img src="C:\Users\Hrutu Bhatt\Pictures\Camera Roll\WhatsApp Image 2023-05-02 at 09.44.43.jpg"
+            alt="NSTSE certifiacte" style="height:300px;width:100%;">
+          <h3>NSTSE</h3>
+          <p>Other academic certificate</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <img src="C:\Users\Hrutu Bhatt\Pictures\Screenshots\Screenshot (12).png" alt="" style="width:100%">
+          <h3>A website made by us.</h3>
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a class="active" href="">1</a>
+      <a href="lab8(2).html">2</a>
+
+      <a href="#">&raquo;</a>
+    </div>
+  </div>
+  </div>
+  <script>
+    function ChangeMode() {
+      var ele = document.body;
+      ele.classList.toggle("dark-mode");
+      var element = document.getElementByClass("main");
+      ele.classList.toggle("mystyle");
+    }
+  </script>
+</body>
+
+</html>

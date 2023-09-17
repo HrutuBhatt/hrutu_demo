@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lab 7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .dark-mode {
+      background-color: black;
+      color: rgb(246, 246, 246);
+    }
+
+    .mystyle {
+      color: greenyellow;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 0;
+    }
+    .show {
+      display: block;
+    }
+
+
+    .accordion {
+      background-color: rgb(253, 250, 217);
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: solid orange;
+      text-align: left;
+      outline: grey;
+      font-size: 15px;
+      transition: 0.5s;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .accordion:after {
+      content: '\002B';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: rgb(255, 221, 185);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .card-deck .card {
+      border: solid grey;
+      width: 30%;
+      margin-left: 20px;
+
+    }
+
+    .card-deck {
+      border: 2px;
+      display: flex;
+    }
+    
+
+    .footer {
+      border: 2px solid blue;
+
+      margin-left: 20px;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 160px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #2d27a3;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #fafdff;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #046190;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .sidenav a.active {
+      color: rgb(0, 0, 0);
+      background-color: #f9fdff;
+    }
+
+    .main {
+      margin-left: 160px;
+      /* Same as the width of the sidenav */
+      font-size: 20px;
+      /* Increased text to enable scrolling */
+      padding: 0px 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidenav">
+    <a href="home.html">Home</a>
+
+    <a href="photogallery.html">Photo Gallery</a>
+    <a href="acheivements.html">Acheivements</a>
+    <a href="academics.html">Academics</a>
+    <a href="form.html">Form & Feedback</a>
+    <a href="location.html">Location</a>
+    <a class="active" href="ideas.html">Ideas</a>
+    <a onclick="ChangeMode()">Dark mode</a>
+  </div>
+  <div class="main">
+    
+    
+
+    <h2>Loop holes of education system in India and its possible solutions</h2>
+    <button class="accordion">Lack of infrastructure</button>
+    <div class="panel">
+      <p>Today many schools including govt. and private lack some basic infrastructure facilities like libraries,
+        playgrounds ,science labs,etc.
+        This can lead to lack of their personal growth. Therefore these basic necessities should be included in
+        infrastructure in schools.
+      </p>
+    </div>
+
+    <button class="accordion">Quality education</button>
+    <div class="panel">
+      <p>Quality education is must for all the students. Teachers should be weel trained. Students should also get
+        practical knowledge along with theoritical. They should also be taught to solve real life problems.
+        Industial visits and nature camps must be included in curriculum. Also the subject for their personal
+        development should be included like finance, reasoning and aptitude.
+      </p>
+    </div>
+
+    <button class="accordion">Adoption of technologies</button>
+    <div class="panel">
+      <p>Technological tools like AV rooms can be helpful for better understandings and enhancement of grasping power.
+        Many schools inIndia lack this due to less fundings from government.
+
+      </p>
+    </div>
+    <button class="accordion">Making education affordable</button>
+    <div class="panel">
+      <p>Fees for medical education is much higher than that of other branches. Also there are schools with low fees but
+        lacks other facilities. These should be overcomed by providing scholarships to needful students.
+        Can be made affordable by digitalization also. Books should be provided at low cost to needy students.
+      </p>
+    </div>
+
+
+
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+    <br><br>
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.qWniNvDlEXtxWEo_v8JOZQHaE8&pid=Api&P=0"
+          style="height:60%;width:100%" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Libraries</h5>
+          <p class="card-text">It is a basic necessity which many schools lack.</p>
+
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://tse2.mm.bing.net/th?id=OIP.lHX7HXoJfCbIcLl0XL-jSwHaEK&pid=Api&P=0"
+          alt="Smart Classes" style="width:100%">
+        <div class="card-body">
+          <h5 class="card-title">Smart Classrooms</h5>
+          <p class="card-text">Helps in better understandings.</p>
+
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.7KVCRVYc6sDrVa38X7FIAgHaD3&pid=Api&P=0"
+          alt="Play-ground" style="width:100%">
+        <div class="card-body">
+          <h5 class="card-title">Play grounds</h5>
+          <p class="card-text">For overall growth of students.</p>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Link:<br>
+        <a
+          href="https://r.search.yahoo.com/_ylt=AwrKFlOXlDtkLlE3QT27HAx.;_ylu=Y29sbwNzZzMEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1681655064/RO=10/RU=https%3a%2f%2fwww.cbse.gov.in%2fcbsenew%2finfra.html/RK=2/RS=ww_1vixo8Ql5j6kHkoATPsRJMEk-">Reference:</a>
+      </p>
+    </footer>
+  </div>
+  <script>
+    function ChangeMode() {
+      var ele = document.body;
+      ele.classList.toggle("dark-mode");
+      var element = document.getElementByClass("main");
+      ele.classList.toggle("mystyle");
+    }
+  </script>
+</body>
+
+</html>

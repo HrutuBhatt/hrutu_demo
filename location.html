@@ -1,0 +1,218 @@
+<html>
+
+<head>
+  <title>Introduce Yourself</title>
+  <style>
+    .sidenav {
+      height: 100%;
+      width: 160px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #2d27a3;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #fafdff;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #a9e4ff;
+      color: #046190;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .sidenav a.active {
+      color: rgb(0, 0, 0);
+      background-color: #f9fdff;
+    }
+
+    .main {
+      margin-left: 160px;
+      /* Same as the width of the sidenav */
+      font-size: 20px;
+      text-align:center;
+      padding: 0px 10px;
+    }
+
+    iframe{
+      border-radius: 25px;
+    }
+
+    h1 {
+      color: rgb(23, 172, 63);
+    }
+
+    h2 {
+      color: rgb(174, 80, 221);
+    }
+
+    body {
+      background-color: rgb(255, 252, 201);
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: rgb(246, 246, 246);
+    }
+
+    .mystyle {
+      color: rgb(179, 82, 82);
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidenav">
+    <a href="home.html">Home</a>
+    <a href="photogallery.html">Photo Gallery</a>
+    <a href="acheivements.html">Acheivements</a>
+    <a href="academics.html">Academics</a>
+    <a href="form.html">Form & Feedback</a>
+    <a class="active" href="location.html">Location</a>
+    <a href="ideas.html">Ideas</a>
+    <a onclick="ChangeMode()">Dark mode</a>
+  </div>
+  <div class="main">
+    <h1 style="text-align: center;"><u>HTML API's</u></h1>
+    <h2><u>Latitudes and Longitudes of your location:</u></h2>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Get Location</button>
+    <p id="demo"></p>
+
+    <script>
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude;
+      }
+
+      function showError(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+          case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+          case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+          case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+        }
+      }
+    </script>
+    <h2><u>My Current Location:</u></h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.2560415824983!2d72.87798196488419!3d22.68151053512678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e5b209c2b43a1%3A0xd543907c4eed7f2d!2sChalali%2C%20Nadiad%2C%20Gujarat%20387001!5e0!3m2!1sen!2sin!4v1679924627662!5m2!1sen!2sin"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h2><u>Drag and Drop:</u></h2>
+
+
+    <p>Drag the image of letters into the square:</p>
+
+    <div class="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br><br><br><br>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br><br>
+
+    <br><br><br><br>
+    <img id="drag1" src="C:\Users\Hrutu Bhatt\Pictures\Camera Roll\1.jpeg" draggable="true"
+      ondragstart="drag(event)" width="82" height="86">
+
+    <img id="drag2" src="C:\Users\Hrutu Bhatt\Pictures\Camera Roll\2.jpeg" draggable="true"
+      ondragstart="drag(event)" width="82" height="86">
+
+    <img id="drag3" src="C:\Users\Hrutu Bhatt\Pictures\Camera Roll\3.jpeg" draggable="true"
+      ondragstart="drag(event)" width="82" height="86">
+
+    <img id="drag4" src="C:\Users\Hrutu Bhatt\Pictures\Camera Roll\4.jpeg" draggable="true"
+      ondragstart="drag(event)" width="82" height="86">
+    <br><br>
+
+    <style>
+      .div2,
+      .div3 {
+        float: left;
+        width: 80px;
+        height: 86px;
+        border: 2px solid green;
+      }
+      .div2,#div4{
+        margin-left:45%;
+      }
+
+      #div4,
+      #div5 {
+        float: left;
+        width: 80px;
+        height: 84px;
+        border: 2px solid green;
+      }
+    </style>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <style>
+      #div1 {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border: 2px solid #aaaaaa;
+      }
+    </style>
+  </div>
+  <script>
+    function ChangeMode() {
+      var ele = document.body;
+      ele.classList.toggle("dark-mode");
+      var element = document.getElementByClass("main");
+      ele.classList.toggle("mystyle");
+    }
+  </script>
+</body>
+
+</html>

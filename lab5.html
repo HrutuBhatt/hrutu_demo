@@ -1,0 +1,125 @@
+<html>
+
+<head>
+  <title>Introduce Yourself</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .sidenav {
+      height: 100%;
+      width: 160px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #2d27a3;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #fafdff;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #a9e4ff;
+    }
+
+    .sidenav a.active {
+      color: rgb(0, 0, 0);
+      background-color: #f9fdff;
+    }
+
+    .main {
+      margin-left: 160px;
+      /* Same as the width of the sidenav */
+      font-size: 20px;
+      /* Increased text to enable scrolling */
+      padding: 0px 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="sidenav">
+      <a href="home.html">Home</a>
+      <a href="photogallery.html">Photo Gallery</a>
+      <a href="acheivements.html">Acheivements</a>
+      <a href="academics.html">Academics</a>
+      <a href="form.html">Form & Feedback</a>
+      <a href="location.html">Location</a>
+      <a href="ideas.html">Ideas</a>
+    </div>
+    <h2>1.Demonstate temporary Inline as well as Internal CSS</h2>
+    <h3 style="color:rgb(71, 93, 255); text-align:center;"><u>Inline CSS</u></h3>
+    <p id="myDIV" style=" font-family: 'Times New Roman', Times, serif;color:rgb(180, 12, 227);">-> Inline style is used
+      here:<br> therefore only these two lines are of purple color.</p>
+    <p>An inline style may be used to apply a unique style for a single element.
+      To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS
+      property.</p>
+    <style>
+      body {
+        background-color: rgb(239, 244, 177);
+      }
+
+      h3 {
+        color: rgb(71, 93, 255);
+        text-align: center;
+        font-size: 25px;
+      }
+
+      p {
+        color: rgb(210, 62, 62);
+        font-size: 20px;
+      }
+    </style>
+    <hr>
+    <h3><u>Internal CSS</u></h3>
+    <p id="myDIV">->Internal CSS is used here.</p>
+    <p>->An internal style sheet may be used if one single HTML page has a unique style.<br>The internal style is
+      defined inside the "style" element, inside the head section.</p>
+    <hr>
+    <p>#click inspect to see the code</p>
+    <hr>
+    <style>
+      .dark-mode {
+        background-color: black;
+        color: rgb(246, 246, 246);
+      }
+
+      .mystyle {
+        color: greenyellow;
+      }
+    </style>
+
+    <h2><u>To Change your theme :</u></h2>
+
+    <p>Click the button to toggle between dark and light mode for this page.</p>
+    <a onclick="ChangeMode()">Toggle dark mode</a>
+
+    <script>
+      function ChangeMode() {
+        var ele = document.body;
+        ele.classList.toggle("dark-mode");
+        var element = document.getElementById("myDIV");
+        ele.classList.toggle("mystyle");
+      }
+    </script>
+  </div>
+</body>
+
+</html>

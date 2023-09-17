@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: #001069;
+  color:#f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  height:70px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 25px;
+  border: none;
+  box-shadow:0 10px 10px 0 grey;
+  display:center;
+  margin-left:30px;
+  border-radius: 10px;
+  height:400px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+    font-size:20px;
+    box-shadow:0 10px 10px 0 rgb(255, 2, 2);
+    margin-bottom: 10px;
+    height:500px;
+  }
+ .column,.row{
+    background-color: black;
+    color:white;
+   
+  }
+  h1{
+    color:red;
+  }
+  body{
+    background-color: rgb(219, 219, 219);
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 style="color:white;">Responsive Webpage</h1>
+  <p></p>
+</div>
+<hr>
+<div class="topnav">
+  <a href="lab8.html">Acheivements</a>
+  <a href="lab8(2).html">Academics</a>
+  
+</div>
+<br><br>
+<h1 style="text-align:center;">Computer Science</h1>
+<div class="row">
+  <div class="column">
+    <h2>Artificial Intelligence</h2>
+    <p>At its simplest form, artificial intelligence is a field, which combines computer science and robust datasets, 
+        to enable problem-solving. It also encompasses sub-fields of machine learning and deep learning, which are frequently mentioned in 
+        conjunction with artificial intelligence. These disciplines are comprised of AI algorithms which seek to create expert systems which 
+        make predictions or classifications based on input data.</p>
+  </div>
+  
+  <div class="column">
+    <h2>Data Science</h2>
+    <p>Data science is an interdisciplinary field that uses algorithms, procedures, and processes to examine large amounts of data in order 
+        to uncover hidden patterns, generate insights, and direct decision-making. To create prediction models, data scientists use advanced 
+        machine learning algorithms to sort through, organize, and learn from structured and unstructured data. <br>Data science is the study
+        of data, much like marine biology is the study of sea-dwelling biological life forms. Data scientists construct questions around
+        specific data sets and then use data analytics and advanced analytics to find patterns, create predictive models, and develop insights
+        that guide decision-making within businesses. </p>
+  </div>
+  
+  <div class="column">
+    <h2>Cyber Security</h2>
+    <p>Cybersecurity is the practice of protecting critical systems and sensitive information from digital attacks. Also known as information
+      technology (IT) security, cybersecurity measures are designed to combat threats against networked systems and applications, whether 
+      those threats originate from inside or outside of an organization.<br>Cybersecurity is essential for protecting our digital assets, 
+      including sensitive personal and financial information, intellectual property, and critical infrastructure. Cyberattacks can have 
+      serious consequences, including financial loss, reputational damage, and even physical harm.</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+

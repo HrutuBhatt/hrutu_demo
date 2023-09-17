@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact me</title>
+    <style>
+        .dark-mode .form {
+            background-color: black;
+            color: rgb(246, 246, 246);
+        }
+
+        .mystyle .form {
+            color: rgb(255, 21, 21);
+            background-color: black;
+        }
+
+        .dark-mode body {
+
+            background-color: rgb(118, 104, 104);
+        }
+
+        .form {
+            padding:20px 5px 20px 5px;
+            border-radius: 20px;
+            border: 0px solid rgb(18, 0, 155);
+            background-color: rgb(247, 248, 253);
+            margin-left: 25%;
+            margin-right: 25%;
+            font-size: 20px;
+            box-shadow: 0 0 10px 8px grey;
+            padding-left: 15%;
+        }
+
+        input {
+            width: 50%;
+            align-items: center;
+            border-radius: 5px;
+            height:20px;
+            border:0.1px solid;
+            
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #2d27a3;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #fafdff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #046190;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .sidenav a.active {
+            color: rgb(0, 0, 0);
+            background-color: #f9fdff;
+        }
+        .submit{
+            color:white;
+            background-color: black;
+            height:20px;
+            width:60px;
+        }
+        body {
+            background-image: url("https://tse3.mm.bing.net/th?id=OIP.kUUmY3W5qC70GpCVCZlweQHaEK&pid=Api&P=0&h=180");
+            height: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+ 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="home.html">Home</a>
+        <a href="photogallery.html">Photo Gallery</a>
+        <a href="acheivements.html">Acheivements</a>
+        <a href="academics.html">Academics</a>
+        <a class="active" href="form.html">Form & Feedback</a>
+        <a href="location.html">Location</a>
+        <a href="ideas.html">Ideas</a>
+        <a onclick="ChangeMode()">Dark mode</a>
+    </div>
+    
+    <div class="form">
+        <h2 style="text-align: left;"><u>Contact Details:</u></h2>
+        <form action="D:\HTML\output file.html" method="post">
+            <br><br>
+            <label for="name"><b>Full name:</b></label><br><br>
+            <input type="text" id="name" name="name" required><br>
+            
+            <p><b>Student ID</b></p>
+            <input type="text" id="id" name="id" required><br><br>
+
+            <label for="email"><b>Enter your email:</b></label> <br><br>
+            <input type="email" id="email" name="email" required>
+            <br> <br>
+            <label for="phone"><b>Enter a phone number:</b></label><br><br>
+            <input type="tel" id="mobile" name="phone" placeholder="012-3456-789" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}"
+                required><br>
+
+
+            <p><b>Enter your date of birth:</b></p>
+
+            <input type="date" id="date" name="date"><br><br>
+
+        
+            <p><label for="others"><b>Other Details:</b></label></p>
+            <textarea id="others" name="other details" rows="4"
+                cols="30"> Enter other details about yourself.</textarea><br><br>
+            <input type="submit" value="Submit" class="submit"><br><br>
+
+    
+    <br>
+    </form>
+   
+    </div>
+    <br><br>
+    <div class="form">
+        <h1 ><u>Feedback Form:</u></h1>
+        <p><b>Rate our website:</b></p>
+        
+        <form action="D:\HTML\output file.html" method="get">
+            <input type="radio" id="very good" name="feedback" value="very good">
+            <label for="very good">Very Good</label><br>
+            <input type="radio" id="good" name="feedback" value="good">
+            <label for="good">Good</label><br>
+            <input type="radio" id="okay" name="feedback" value="okay">
+            <label for="okay">Okay</label><br>
+            <input type="radio" id="poor" name="feedback" value="poor">
+            <label for="poor">Poor</label><br>
+            <input type="radio" id="bad" name="feedback" value="bad">
+            <label for="bad">Bad</label><br>
+            <h3>Suggestions:</h3>
+            <textarea  name="suggestions" rows="4" cols="50"> Any suggestions??</textarea><br>
+            <h3>How did you hear about us?</h3>
+            <input type="radio" id="online" name="hear" value="online">
+            <label for="online">Searching Online</label><br>
+            <input type="radio" id="college" name="hear" value="college">
+            <label for="college">From your Institution</label><br>
+            <input type="radio" id="social" name="hear" value="social">
+            <label for="social">Social Media or from Ad</label><br>
+    
+            <h2>Feedback:</h2>
+            <textarea id="anonymous feedback" name="anonymous feedback" rows="4" cols="50">We would love to hear your feedbacks.</textarea><br>
+            <input type="submit" value="Submit" class="submit"><br><br>
+          
+        </form>
+   
+    </div>
+    
+    <script>
+        function ChangeMode() {
+            var ele = document.body;
+            ele.classList.toggle("dark-mode");
+            var element = document.getElementById("main");
+            ele.classList.toggle("mystyle");
+        }
+    </script>
+</body>
+
+</html>

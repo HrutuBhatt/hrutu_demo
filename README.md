@@ -1,4 +1,4 @@
 # hrutu_demo
-It contains my projects
+It is just a demo repository.
 <br>
 Author - Hrutu 
